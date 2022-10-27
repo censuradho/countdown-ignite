@@ -8,14 +8,15 @@ export const Container = styled('li', {
   alignItems: 'center'
 })
 
-export const Label = styled('span', {
+export const Label = styled('label', {
   fontSize: '$sm',
   color: '$gray300',
   textDecoration: 'line-through',
   display: 'inline-block',
   width: '100%',
   padding: '0 1rem',
-
+  cursor: 'pointer',
+  
   variants: {
     active: {
       true: {

@@ -37,10 +37,11 @@ export const Todo = memo((props: TodoProps) => {
     <Styles.Container>
       <Checkbox 
         checked={!active}
+        id={uuid}
         defaultChecked={!active}
         onCheckedChange={handleChecked} 
       />
-      <Styles.Label active={active}>{label}</Styles.Label>
+      <Styles.Label htmlFor={uuid} active={active}>{label}</Styles.Label>
       <ButtonIcon
         onClick={handleRemoveTodo}
         icon={{ 

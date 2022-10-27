@@ -10,4 +10,5 @@ export type CheckboxProps = Pick<ComponentProps<typeof Root>,
   | 'required'
   | 'name'
   | 'value'
+  | 'id'
 >
