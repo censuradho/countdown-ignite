@@ -25,6 +25,7 @@ export const Button = styled("button", {
         },
         padding: "1rem",
         borderRadius: '$sm',
+        height: '3.375rem',
 
         "svg path": {
           fill: "White",
