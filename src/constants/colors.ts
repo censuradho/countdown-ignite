@@ -1,6 +1,9 @@
 export const colors = {
   blue: '#4EA8DE',
   purpleDark: '#5E60CE',
+  sulu: '#D3F36B',
+  shark: '#24282E',
+  tuna: '#31353B',
   gray700: '#0D0D0D',
   gray600: '#1A1A1A',
   gray500: '#262626',
