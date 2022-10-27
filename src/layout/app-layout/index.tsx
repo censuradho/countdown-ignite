@@ -9,6 +9,7 @@ import * as Styles from './styles'
 import { useLocalStorage } from '@/src/hooks/useLocalStorage'
 import { Todo, TodoFormData } from './types'
 import { todoSchemaValidation } from './validations';
+import { TodoList } from './components';
 
 export function AppLayout () {
   const [todos, setTodos] = useLocalStorage<Todo[]>('@censuradho:todos', [])
@@ -16,16 +17,25 @@ export function AppLayout () {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    setValue,
+    formState: { 
+      errors    },
   } = useForm<TodoFormData>({
     resolver: yupResolver(todoSchemaValidation),
   });
 
   const onSubmit = (todo: TodoFormData) => {
+    const newTodo: Todo = {
+      ...todo,
+      active: true
+    }
+
     setTodos(prevState => ([
       ...prevState,
-      todo
+      newTodo
     ]))
+
+    setValue('label', '')
   }
   
   useEffect(() => {
@@ -45,6 +55,7 @@ export function AppLayout () {
           />
           <Button icon={{ name: 'plus' }}>Criar</Button>
         </Styles.Form>
+        <TodoList todos={todos}/>
       </Styles.Container>
     </>
   )
