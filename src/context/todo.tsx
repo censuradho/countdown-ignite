@@ -1,34 +1,31 @@
 import { createContext, ReactNode, useContext, useState } from "react";
+import { SetValue, useLocalStorage } from "../hooks/useLocalStorage";
+import { Todo } from "../layout/app-layout/types";
 
 interface TodoContextProps {
-  setTodo: React.Dispatch<React.SetStateAction<Todo[]>>
-  todo: Todo[]
+  setTodos: SetValue<Todo[]>
+  todos: Todo[]
 }
 
 interface TodoProviderProps {
   children: ReactNode
 }
 
-interface Todo {
-  active?: boolean
-  label: string
-}
-
 const TodoContext = createContext<TodoContextProps>({
-  setTodo: () => {},
-  todo: []
+  setTodos: () => {},
+  todos: []
 })
 
 export function TodoProvider (props: TodoProviderProps) {
   const { children } = props
 
-  const [todo, setTodo] = useState<Todo[]>([])
+  const [todos, setTodos] = useLocalStorage<Todo[]>('@censuradho:todos', [])
 
 
   return (
     <TodoContext.Provider value={{
-      todo, 
-      setTodo
+      todos, 
+      setTodos
     }}>
       {children}
     </TodoContext.Provider>

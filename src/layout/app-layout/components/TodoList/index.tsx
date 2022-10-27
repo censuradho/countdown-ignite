@@ -1,5 +1,5 @@
 import { Box, Icon, Typography } from '@/src/components'
-import { useTodoContext } from '@/src/context/todo'
+import { Todo } from '../Todo'
 import * as Styles from './styles'
 import { TodoListProps } from './types'
 
@@ -10,14 +10,13 @@ export function TodoList (props: TodoListProps) {
 
   const total = todos.length
 
-  function renderEmptyList () {
-    if (todos.length > 1) return null
-
-
-  }
+  
+  const renderTodos = todos.map(todo => (
+    <Todo key={todo.uuid} {...todo} />
+  ))
 
   function renderContent () {
-    if (todos.length > 1) return (
+    if (todos.length === 0) return (
       <Box flexDirection="column" justifyContent="center" alignItems="center" gap={1}>
         <Icon name="clipboard" />
         <Box flexDirection="column" alignItems="center" gap={0.5}>
@@ -27,7 +26,9 @@ export function TodoList (props: TodoListProps) {
       </Box>
     )
 
-    return null
+    return (
+      <Styles.List>{renderTodos}</Styles.List>
+    )
   }
 
   return (

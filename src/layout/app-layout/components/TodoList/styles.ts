@@ -17,3 +17,9 @@ export const Count = styled('div', {
   justifyContent: 'center',
   alignItems: 'center'
 })
+
+export const List = styled('ul', {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '1rem'
+})

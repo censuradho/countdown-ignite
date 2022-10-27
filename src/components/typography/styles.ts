@@ -16,6 +16,11 @@ export const Typography = styled("span", {
       true: {
         fontWeight: 600
       }
+    },
+    lineThrough: {
+      true: {
+      textDecoration: 'line-through'
+      }
     }
   },
   defaultVariants: {

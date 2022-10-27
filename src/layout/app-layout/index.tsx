@@ -10,9 +10,11 @@ import { useLocalStorage } from '@/src/hooks/useLocalStorage'
 import { Todo, TodoFormData } from './types'
 import { todoSchemaValidation } from './validations';
 import { TodoList } from './components';
+import { uuid } from '@/src/lib/uuid';
+import { useTodoContext } from '@/src/context/todo';
 
 export function AppLayout () {
-  const [todos, setTodos] = useLocalStorage<Todo[]>('@censuradho:todos', [])
+  const { setTodos, todos } = useTodoContext()
 
   const {
     register,
@@ -27,6 +29,7 @@ export function AppLayout () {
   const onSubmit = (todo: TodoFormData) => {
     const newTodo: Todo = {
       ...todo,
+      uuid: uuid(),
       active: true
     }
 
