@@ -38,8 +38,10 @@ export const Todo = memo((props: TodoProps) => {
   
   const handleEdit = () => {
     if (editLabel.length === 0) return handleRemoveTodo()
-
     setIsEditing(false)
+
+    if (editLabel === label) return;
+
     setTodos(prevState => {
       return prevState.map(todo => 
         
