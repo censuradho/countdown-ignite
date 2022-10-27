@@ -18,13 +18,6 @@ export const Button = styled("button", {
       },
     },
     variant: {
-      letter: {
-        background: "none",
-      },
-      "letter-underline": {
-        background: "none",
-        textDecoration: "underline",
-      },
       primary: {
         background: "$blue",
         "> *": {
