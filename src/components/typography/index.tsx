@@ -1,11 +1,15 @@
+import { theme } from '@/stitches.config'
 import * as Styles from './styles'
 import { TypographyProps } from './types'
 
 export function Typography (props: TypographyProps) {
-  const { children, ...otherProps } = props
+  const { children, color, ...otherProps } = props
 
   return (
-    <Styles.Typography {...otherProps}>
+    <Styles.Typography
+    style={{ color: theme.colors[color || 'gray300'].value }}
+      {...otherProps}
+    >
       {children}
     </Styles.Typography>
   )

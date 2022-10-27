@@ -1,5 +1,13 @@
 import { styled } from "@/stitches.config";
 
+export const Container = styled("div", {
+  display: "flex",
+  flexDirection: "column",
+  gap: "1rem",
+  width: '100%',
+});
+
+
 export const Input = styled('input', {
   width: '100%',
   height: '3.375rem',
@@ -18,5 +26,14 @@ export const Input = styled('input', {
 
   '&:focus': {
     borderColor: '$blue'
+  },
+
+  variants: {
+    hasError: {
+      true: {
+        borderColor: '$tomato',
+        color: '$tomato'
+      }
+    }
   }
 })

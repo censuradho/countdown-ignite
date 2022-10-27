@@ -19,7 +19,7 @@ function BaseButton(props: ButtonProps) {
     <Styles.Button
       {...otherProps}
     >
-      <Typography bold>
+      <Typography bold color="white">
         {children}
       </Typography>
       {icon && <Icon {...icon} />}

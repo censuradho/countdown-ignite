@@ -1,11 +1,31 @@
+import { Typography } from '../typography';
 import * as Styles from './styles'
 
 import type { InputProps } from './types'
 
 export function Input (props: InputProps) {
-  const { ...otherProps } = props
+  const { errorMessage,  register, ...otherProps } = props
+
+  const hasError = !!errorMessage
+
+  
+  const renderErrorMessage = () => {
+    if (!hasError) return null;
+
+    return (
+      <Typography color="tomato">{errorMessage}</Typography>
+
+    );
+  };
 
   return (
-    <Styles.Input {...otherProps} />
+    <Styles.Container>
+      <Styles.Input
+        hasError={hasError}
+        {...otherProps} 
+        {...register}
+      />
+      {renderErrorMessage()}
+    </Styles.Container>
   )
 }

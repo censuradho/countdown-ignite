@@ -1,3 +1,4 @@
+import { theme } from '@/stitches.config';
 import { VariantProps } from '@stitches/react'
 import { ReactNode } from "react";
 
@@ -7,4 +8,5 @@ export interface TypographyProps extends
 
 VariantProps<typeof Typography> {
   children: ReactNode
+  color?: keyof typeof theme.colors
 }

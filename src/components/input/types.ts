@@ -1,4 +1,5 @@
 import { InputHTMLAttributes } from "react";
+import { UseFormRegisterReturn } from "react-hook-form/dist/types";
 
 type RootInputProps = Pick<InputHTMLAttributes<HTMLInputElement>,
   'name'
@@ -10,4 +11,7 @@ type RootInputProps = Pick<InputHTMLAttributes<HTMLInputElement>,
   | 'placeholder'
 >
 
-export interface InputProps extends RootInputProps {}
+export interface InputProps extends RootInputProps {
+  errorMessage?: string
+  register?: UseFormRegisterReturn
+}

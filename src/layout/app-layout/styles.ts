@@ -11,6 +11,6 @@ export const Form = styled('form', {
   position: 'relative',
   top: '-2rem',
   display: 'flex',
-  alignItems: 'center',
+  alignItems: 'flex-start',
   gap: '0.5rem'
 })
