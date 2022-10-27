@@ -1,1 +1,5 @@
-export * from './Header'
+export * from './header'
+export * from './input'
+export * from './icon'
+export * from './typography'
+export * from './button'

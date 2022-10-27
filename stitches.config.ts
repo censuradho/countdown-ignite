@@ -24,7 +24,7 @@ const {
       text: "Inter, sans-serif",
     },
     radii: {
-      sm: "0.375rem",
+      sm: "8px",
     },
     lineHeights: {
       caption2: "0.8125rem",
@@ -51,7 +51,7 @@ const globalStyle = GlobalCss({
     color: "$title",
   },
   body: {
-    backgroundColor: "$background",
+    backgroundColor: "$gray600",
   },
   button: {
     background: "none",
