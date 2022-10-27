@@ -7,8 +7,8 @@ export const Container = styled('div', {
 })
 
 export const Count = styled('div', {
-  width: '1.5625rem',
-  height: '1.1875rem',
+  padding: '0 0.5rem',
+  
   borderRadius: '9999px',
   backgroundColor: '$gray400',
   color: '$gray200',

@@ -40,7 +40,7 @@ export function TodoList (props: TodoListProps) {
         </Box>
         <Box gap={0.5}>
           <Typography color="purpleDark" heading bold>Concluídas</Typography>
-          <Styles.Count>{todosFinished}</Styles.Count>
+          <Styles.Count>{`${todosFinished} de ${total}`}</Styles.Count>
         </Box>
       </Box>
       {renderContent()}
