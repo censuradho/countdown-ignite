@@ -14,5 +14,10 @@ export const Link = styled(NavLink, {
 
   '&:hover': {
     borderColor: '$primary'
+  },
+  '&.active': {
+    path: {
+      fill: '$primary'
+    }
   }
 })
