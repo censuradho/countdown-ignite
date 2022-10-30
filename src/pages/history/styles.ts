@@ -50,7 +50,41 @@ export const HistoryList = styled('div', {
         paddingLeft: '1.5rem'
       },
       '&:last-child': {
-        paddingRight: '1.5rem'
+        paddingRight: '1.5rem',
+        display: 'flex',
+        gap: '0.5rem'
+      }
+    }
+  }
+})
+
+export const Status = styled('span', {
+  display: 'flex',
+  alignItems: 'center',
+  gap: '0.5rem',
+  '&::before': {
+    content: '',
+    width: '0.5rem',
+    height: '0.5rem',
+    borderRadius: '50%'
+  },
+
+  variants: {
+    value: {
+      finished: {
+        '&::before': {
+          background: '$green'
+        }
+      },
+      danger: {
+        '&::before': {
+          background: '$danger'
+        }
+      },
+      error: {
+        '&::before': {
+          background: '$red'
+        }
       }
     }
   }

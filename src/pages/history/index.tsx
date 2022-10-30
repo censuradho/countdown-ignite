@@ -19,23 +19,35 @@ export function History () {
               <td>Tarefa</td>
               <td>20 minutos</td>
               <td>à 2 dias</td>
-              <td>Concluído</td>
+              <td>
+                <Styles.Status value="error" />
+                Concluído
+              </td>
             </tr>
             <tr>
               <td>Tarefa</td>
               <td>20 minutos</td>
               <td>à 2 dias</td>
-              <td>Concluído</td>
+              <td>
+                <Styles.Status value="danger" />
+                Concluído
+              </td>
             </tr>            <tr>
               <td>Tarefa</td>
               <td>20 minutos</td>
               <td>à 2 dias</td>
-              <td>Concluído</td>
+              <td>
+                <Styles.Status value="danger" />
+                Concluído
+              </td>
             </tr>            <tr>
               <td>Tarefa</td>
               <td>20 minutos</td>
               <td>à 2 dias</td>
-              <td>Concluído</td>
+              <td>
+                <Styles.Status value="finished" />
+                Concluído
+              </td>
             </tr>
           </tbody>
         </table>
