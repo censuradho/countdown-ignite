@@ -1,9 +1,8 @@
 export const colors = {
-  blue: '#4EA8DE',
-  purpleDark: '#5E60CE',
-  sulu: '#D3F36B',
-  shark: '#24282E',
-  tuna: '#31353B',
+  primary: '#D3F36B',
+  primaryDark: '#31353B',
+  background: '#24282E',
+  foreground: '#31353B',
   gray700: '#0D0D0D',
   gray600: '#1A1A1A',
   gray500: '#262626',
@@ -11,6 +10,6 @@ export const colors = {
   gray300: '#808080',
   gray200: '#D9D9D9',
   gray100: '#F2F2F2',
-  tomato: 'tomato',
+  red: '#AB222E',
   white: '#fffff',
 }

@@ -1,12 +1,17 @@
-import { TodoProvider } from './context/todo'
-import { AppLayout } from './layout'
+import { globalStyle } from '@/stitches.config'
+import { useEffect } from 'react'
+import { BrowserRouter } from 'react-router-dom'
+import { RootRoutes } from './routes'
 
-function App() {
+function App () {
+  useEffect(() => {
+    globalStyle()
+  }, [])
 
   return (
-    <TodoProvider>
-      <AppLayout />
-    </TodoProvider>
+    <BrowserRouter>
+      <RootRoutes />
+    </BrowserRouter>
   )
 }
 

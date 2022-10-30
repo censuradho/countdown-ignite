@@ -1,13 +1,13 @@
-import { ReactComponent as Plus } from '@/src/assets/plus.svg'
-import { ReactComponent as Logo } from '@/src/assets/logo.svg'
-import { ReactComponent as Trash } from '@/src/assets/trash.svg'
-import { ReactComponent as Clipboard } from '@/src/assets/clipboard.svg'
-import { ReactComponent as Correct } from '@/src/assets/correct.svg'
+import { ReactComponent as Logo } from '@/src/assets/Logo.svg'
+import { ReactComponent as Scroll } from '@/src/assets/Scroll.svg'
+import { ReactComponent as Timer } from '@/src/assets/Timer.svg'
+import { ReactComponent as Pause } from '@/src/assets/Pause.svg'
+import { ReactComponent as Play } from '@/src/assets/Play.svg'
 
 export const icons = {
-  plus: Plus,
   logo: Logo,
-  trash: Trash,
-  clipboard: Clipboard,
-  correct: Correct
+  scroll: Scroll,
+  timer: Timer,
+  play: Play,
+  pause: Pause
 }

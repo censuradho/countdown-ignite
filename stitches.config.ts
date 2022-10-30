@@ -48,10 +48,10 @@ const globalStyle = GlobalCss({
     margin: "0",
     boxSizing: "border-box",
     fontFamily: "$text",
-    color: "$title",
+    color: '$gray200'
   },
   body: {
-    backgroundColor: "$gray600",
+    backgroundColor: "$background",
   },
   button: {
     background: "none",
