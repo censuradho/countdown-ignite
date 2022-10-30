@@ -1,6 +1,9 @@
 import { Box, ButtonIcon } from '@/src/components'
 import { useTimerContext } from '@/src/context/timer'
-import { formatDistance, isAfter } from 'date-fns'
+
+import { formatDistanceToNow, isAfter } from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR'
+
 import { useState } from 'react'
 
 import * as Styles from './styles'
@@ -16,14 +19,15 @@ export function History () {
   })
 
   const renderHistoryList = cycles.map(cycle => {
-    const startAt = cycle?.finishedAt || cycle?.interruptAt || cycle.createdAt
-    const distance = formatDistance(new Date(), startAt, {
-      addSuffix: true
+    const startAt = cycle?.finishedAt || cycle?.interruptAt || cycle.createdAt || new Date()
+    const distance = formatDistanceToNow(new Date(startAt), {
+      addSuffix: true,
+      locale: ptBR
     })
 
-    const statusError = cycle.interruptAt ? 'error' : ''
-    const statusFinished = cycle.finishedAt ? 'finished' : ''
-    const statusDanger = !cycle?.finishedAt && !cycle.interruptAt ? 'danger' : ''
+    const statusError = cycle.interruptAt && 'error'
+    const statusFinished = cycle.finishedAt && 'finished'
+    const statusDanger = !cycle?.finishedAt && !cycle.interruptAt && 'danger'
 
     const labelMap = {
       error: 'Interrompido',
@@ -31,7 +35,7 @@ export function History () {
       danger: 'Em andamento'
     }
 
-    const key = statusError || statusFinished || statusDanger as keyof typeof labelMap
+    const key = (statusError || statusFinished || statusDanger) as keyof typeof labelMap
 
     return (
       <tr key={cycle.id}>

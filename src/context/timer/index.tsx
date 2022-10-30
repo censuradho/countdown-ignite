@@ -1,9 +1,18 @@
+import { differenceInSeconds } from 'date-fns'
+
 import { useInterval } from '@/src/hooks/useInterval'
+import { useLocalStorage } from '@/src/hooks/useLocalStorage'
 import { uuid } from '@/src/lib/uuid'
 import { FormNewCycleData } from '@/src/pages/home/components/register-timer-form/types'
 import { Cycle } from '@/src/pages/home/types'
-import { differenceInSeconds } from 'date-fns'
-import { createContext, ReactNode, useContext, useEffect, useState } from 'react'
+
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState
+} from 'react'
 
 interface TimerProviderProps {
   children: ReactNode
@@ -23,8 +32,8 @@ interface TimerContextProps {
 const TimerContext = createContext({} as TimerContextProps)
 
 export function TimerProvider ({ children }: TimerProviderProps) {
-  const [cycles, setCycles] = useState<Cycle[]>([])
-  const [activeCycleId, setActiveCycleId] = useState<string | null>(null)
+  const [cycles, setCycles] = useLocalStorage<Cycle[]>('@censuradho/timer-cycle', [])
+  const [activeCycleId, setActiveCycleId] = useLocalStorage<string | null>('@censuradho/timer-active-cycle-id', null)
   const [amountSecondsPassed, setAmountSecondsPassed] = useState(0)
 
   const activeCycle = cycles.find(cycle => cycle.id === activeCycleId)
@@ -86,7 +95,7 @@ export function TimerProvider ({ children }: TimerProviderProps) {
 
   useInterval(() => {
     if (!activeCycle) return
-    const diffSeconds = differenceInSeconds(new Date(), activeCycle?.createdAt)
+    const diffSeconds = differenceInSeconds(new Date(), new Date(activeCycle?.createdAt))
 
     if (diffSeconds >= totalSeconds) {
       handleFinishedTimer()
