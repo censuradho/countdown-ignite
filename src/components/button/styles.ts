@@ -10,7 +10,8 @@ export const Button = styled('button', {
   outline: 'none',
 
   '&:disabled': {
-    background: '$primaryDark'
+    background: '$primaryDark',
+    opacity: 0.7
   },
   variants: {
     fullWidth: {
