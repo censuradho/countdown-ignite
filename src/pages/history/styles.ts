@@ -4,6 +4,7 @@ export const Container = styled('main', {
   width: '100%',
   display: 'flex',
   flexDirection: 'column',
+
   h1: {
     fontSize: '1.5rem'
   },
@@ -44,6 +45,7 @@ export const HistoryList = styled('div', {
       padding: '1rem',
       fontSize: '0.875rem',
       lineHeight: '1.6',
+      whiteSpace: 'nowrap',
 
       '&:first-child': {
         width: '50%',
