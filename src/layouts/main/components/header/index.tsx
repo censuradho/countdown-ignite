@@ -12,7 +12,7 @@ export function Header () {
       </Link>
 
       <Box gap={2}>
-        <Styles.Link to={paths.timer}>
+        <Styles.Link to={paths.home} end>
           <Icon name="timer" />
         </Styles.Link>
         <Styles.Link to={paths.history}>
