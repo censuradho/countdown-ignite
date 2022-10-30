@@ -12,6 +12,10 @@ export const Container = styled('div', {
 export const Number = styled('span', {
   background: '$background',
   padding: '2rem 1rem',
+  minWidth: '9rem',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
   borderRadius: '8px'
 })
 

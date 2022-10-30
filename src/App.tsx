@@ -1,6 +1,7 @@
 import { globalStyle } from '@/stitches.config'
 import { useEffect } from 'react'
 import { BrowserRouter } from 'react-router-dom'
+import { TimerProvider } from './context/timer'
 import { RootRoutes } from './routes'
 
 function App () {
@@ -10,7 +11,9 @@ function App () {
 
   return (
     <BrowserRouter>
-      <RootRoutes />
+      <TimerProvider>
+        <RootRoutes />
+      </TimerProvider>
     </BrowserRouter>
   )
 }

@@ -8,10 +8,14 @@ export const Button = styled('button', {
   justifyContent: 'center',
   position: 'relative',
   outline: 'none',
+  padding: '1rem',
+  borderRadius: '$sm',
+  height: '3.375rem',
 
   '&:disabled': {
     background: '$primaryDark',
-    opacity: 0.7
+    opacity: 0.7,
+    cursor: 'unset'
   },
   variants: {
     fullWidth: {
@@ -23,17 +27,30 @@ export const Button = styled('button', {
       primary: {
         background: '$primary',
         '> *': {
+          color: '$background'
+        },
+
+        'svg path': {
+          fill: '$background'
+        },
+        '&:hover, &:focus': {
+          background: '$primaryDark',
+          'svg path': {
+            fill: '$background'
+          }
+        }
+      },
+      secondary: {
+        background: '$red',
+        '> *': {
           color: 'white'
         },
-        padding: '1rem',
-        borderRadius: '$sm',
-        height: '3.375rem',
 
         'svg path': {
           fill: 'White'
         },
-        '&:hover, &:focus': {
-          background: '$primaryDark',
+        '&:hover': {
+          background: '$redDark',
           'svg path': {
             fill: 'white'
           }

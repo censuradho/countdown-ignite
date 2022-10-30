@@ -33,6 +33,11 @@ export const Input = styled('input', {
       true: {
         flex: 1
       }
+    },
+    hasError: {
+      true: {
+        borderColor: '$red'
+      }
     }
   }
 })
