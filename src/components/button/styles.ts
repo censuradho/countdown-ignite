@@ -1,53 +1,54 @@
-import { styled } from "@/stitches.config";
+import { styled } from '@/stitches.config'
 
-export const Button = styled("button", {
-  display: "flex",
-  alignItems: "center",
-  gap: "0.5rem",
-  transition: ".2s",
-  justifyContent: "center",
-  position: "relative",
+export const Button = styled('button', {
+  display: 'flex',
+  alignItems: 'center',
+  gap: '0.5rem',
+  transition: '.2s',
+  justifyContent: 'center',
+  position: 'relative',
+  outline: 'none',
 
-  "&:disabled": {
-    background: "$primaryDark",
+  '&:disabled': {
+    background: '$primaryDark'
   },
   variants: {
     fullWidth: {
       true: {
-        width: "100%",
-      },
+        width: '100%'
+      }
     },
     variant: {
       primary: {
-        background: "$blue",
-        "> *": {
-          color: "white",
+        background: '$primary',
+        '> *': {
+          color: 'white'
         },
-        padding: "1rem",
+        padding: '1rem',
         borderRadius: '$sm',
         height: '3.375rem',
 
-        "svg path": {
-          fill: "White",
+        'svg path': {
+          fill: 'White'
         },
-        "&:hover": {
-          opacity: 0.7,
-          "svg path": {
-            fill: "white",
-          },
-        },
-      },
-    },
+        '&:hover, &:focus': {
+          background: '$primaryDark',
+          'svg path': {
+            fill: 'white'
+          }
+        }
+      }
+    }
   },
   defaultVariants: {
-    variant: "primary",
-  },
-});
+    variant: 'primary'
+  }
+})
 
-export const LoaderContainer = styled("div", {
-  position: "absolute",
+export const LoaderContainer = styled('div', {
+  position: 'absolute',
 
   svg: {
-    width: "36px",
-  },
-});
+    width: '36px'
+  }
+})

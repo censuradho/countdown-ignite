@@ -1,6 +1,6 @@
 import { FormProps } from './types'
 import * as Styles from './styles'
-import { Box } from '@/src/components'
+import { Box, Button } from '@/src/components'
 
 export function Form (props: FormProps) {
   const { children } = props
@@ -25,6 +25,12 @@ export function Form (props: FormProps) {
         <span>minutos.</span>
       </Box>
       {children}
+      <Button
+        type="submit"
+        icon={{
+          name: 'play'
+        }}
+      >Começar</Button>
     </Styles.Form>
   )
 }

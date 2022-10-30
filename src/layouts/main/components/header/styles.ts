@@ -5,7 +5,8 @@ export const Container = styled('header', {
   width: '100%',
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'space-between'
+  justifyContent: 'space-between',
+  marginBottom: '2rem'
 })
 
 export const Link = styled(NavLink, {
