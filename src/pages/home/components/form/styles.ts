@@ -10,7 +10,37 @@ export const Form = styled('form', {
 })
 
 export const Input = styled('input', {
+  background: 'none',
+  border: 'none',
+  outline: 'none',
+  height: '2.5rem',
+  borderBottom: '2px solid $gray500',
+  fontWeight: 600,
+  fontSize: 'inherit',
+  color: '$gray200',
+  padding: '0 0.5rem',
 
+  '&:focus': {
+    borderColor: '$primary'
+  },
+
+  '&::-webkit-calendar-picker-indicator': {
+    display: 'none !important'
+  },
+
+  variants: {
+    fullWidth: {
+      true: {
+        flex: 1
+      }
+    }
+  }
+})
+
+export const DataList = styled('datalist', {})
+
+export const MinutesAmountInput = styled(Input, {
+  width: '4rem'
 })
 
 export const Label = styled('label', {
