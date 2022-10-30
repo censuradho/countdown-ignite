@@ -1,9 +1,13 @@
 import { Outlet } from 'react-router-dom'
+import { Header } from './components'
+
+import * as Styles from './styles'
 
 export function MainLayout () {
   return (
-    <div>
+    <Styles.Container>
+      <Header />
       <Outlet />
-    </div>
+    </Styles.Container>
   )
 }

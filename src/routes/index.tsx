@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import { paths } from '@/src/constants/routes'
-import { History, Home } from '@/src/pages'
+import { History, Home, Timer } from '@/src/pages'
 import { MainLayout } from '../layouts'
 
 export function RootRoutes () {
@@ -14,6 +14,10 @@ export function RootRoutes () {
         <Route
           path={paths.history}
           element={<History />}
+        />
+        <Route
+          path={paths.timer}
+          element={<Timer />}
         />
       </Route>
     </Routes>

@@ -1,4 +1,5 @@
 export const paths = {
   home: '/',
-  history: '/history'
+  history: '/history',
+  timer: '/timer'
 }
