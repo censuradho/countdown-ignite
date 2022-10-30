@@ -1,14 +1,15 @@
 import { Box, Icon } from '@/src/components'
 import { paths } from '@/src/constants/routes'
+import { Link } from 'react-router-dom'
 
 import * as Styles from './styles'
 
 export function Header () {
   return (
     <Styles.Container>
-      <Styles.Link to={paths.home}>
+      <Link to={paths.home}>
         <Icon name="logo" />
-      </Styles.Link>
+      </Link>
 
       <Box gap={2}>
         <Styles.Link to={paths.timer}>
