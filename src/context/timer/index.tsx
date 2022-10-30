@@ -12,6 +12,7 @@ interface TimerProviderProps {
 interface TimerContextProps {
   registerCycle: (data: FormNewCycleData) => void
   stopCycle: () => void
+  finishedCycle: () => void
   minutes: string;
   seconds: string;
   cycles: Cycle[];
@@ -66,6 +67,21 @@ export function TimerProvider ({ children }: TimerProviderProps) {
       return cycle
     }))
     setActiveCycleId(null)
+    setAmountSecondsPassed(0)
+  }
+
+  const handleFinishedTimer = () => {
+    setCycles(prevState => prevState.map(cycle => {
+      if (cycle.id === activeCycleId) {
+        return {
+          ...cycle,
+          finishedAt: new Date()
+        }
+      }
+      return cycle
+    }))
+    setActiveCycleId(null)
+    setAmountSecondsPassed(0)
   }
 
   useInterval(() => {
@@ -73,17 +89,7 @@ export function TimerProvider ({ children }: TimerProviderProps) {
     const diffSeconds = differenceInSeconds(new Date(), activeCycle?.createdAt)
 
     if (diffSeconds >= totalSeconds) {
-      setCycles(prevState => prevState.map(cycle => {
-        if (cycle.id === activeCycleId) {
-          return {
-            ...cycle,
-            finishedAt: new Date()
-          }
-        }
-        return cycle
-      }))
-      setActiveCycleId(null)
-      setAmountSecondsPassed(0)
+      handleFinishedTimer()
       return
     }
 
@@ -99,11 +105,11 @@ export function TimerProvider ({ children }: TimerProviderProps) {
     document.title = `${minutes}:${seconds}`
   }, [minutes, seconds, activeCycle])
 
-  console.log(cycles)
   return (
     <TimerContext.Provider value={{
       registerCycle: handleRegisterCycle,
       stopCycle: handleInterruptCycle,
+      finishedCycle: handleFinishedTimer,
       minutes,
       seconds,
       activeCycleId,

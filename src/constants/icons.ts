@@ -7,6 +7,8 @@ import { ReactComponent as Sun } from '@/src/assets/sun.svg'
 import { ReactComponent as Moon } from '@/src/assets/Moon.svg'
 import { ReactComponent as Remove } from '@/src/assets/remove.svg'
 import { ReactComponent as Add } from '@/src/assets/add.svg'
+import { ReactComponent as ArrowUp } from '@/src/assets/arrow-up.svg'
+import { ReactComponent as ArrowDown } from '@/src/assets/arrow-down.svg'
 
 export const icons = {
   logo: Logo,
@@ -17,5 +19,7 @@ export const icons = {
   sun: Sun,
   moon: Moon,
   remove: Remove,
-  add: Add
+  add: Add,
+  arrowUp: ArrowUp,
+  arrowDown: ArrowDown
 }

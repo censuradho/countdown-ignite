@@ -55,6 +55,11 @@ export function RegisterTimerForm () {
       >Começar</Button>
     )
   }
+
+  const renderSuggestLabel = context.cycles.map(cycle => (
+    <option key={cycle.id} value={cycle.task} />
+  ))
+
   return (
     <Styles.Form onSubmit={handleSubmit(onSubmit)}>
       <Box
@@ -73,7 +78,7 @@ export function RegisterTimerForm () {
           disabled={!!context?.activeCycleId}
         />
         <Styles.DataList id="task-suggestion">
-          <option value="projeto 1" />
+          {renderSuggestLabel}
         </Styles.DataList>
         <Styles.Label htmlFor="minutesAmount">durante</Styles.Label>
         <Styles.MinutesAmountInput
