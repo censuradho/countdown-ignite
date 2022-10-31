@@ -1,15 +1,14 @@
-import { memo } from "react";
-import { Icon } from "../icon";
+import { memo } from 'react'
+import { Icon } from '../icon'
 
 import * as Styles from './styles'
-import { CheckboxProps } from "./types";
+import { CheckboxProps } from './types'
 
 export const Checkbox = memo((props: CheckboxProps) => {
-
   return (
     <Styles.Root {...props}>
       <Styles.Indicator>
-        <Icon name="correct" color="white" />
+        <Icon name="add" color="white" />
       </Styles.Indicator>
     </Styles.Root>
   )
