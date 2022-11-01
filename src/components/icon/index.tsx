@@ -1,20 +1,21 @@
-import { icons } from "@/src/constants/icons";
+import { icons } from '@/src/constants/icons'
 
-import { theme } from "@/stitches.config";
+import { theme } from '@/stitches.config'
 
-import type { IconProps } from "./types";
+import type { IconProps } from './types'
 
-export function Icon(props: IconProps) {
+export function Icon (props: IconProps) {
   const {
-    name, color, customColor, size = 20,
-  } = props;
+    name,
+    color,
+    customColor
+  } = props
 
+  const Svg = icons[name]
 
-  const Svg = icons[name];
-
-  const fill = ((customColor || theme.colors[color || "gray300"].value)) as string;
+  const fill = ((customColor || theme.colors[color || 'gray300'].value)) as string
 
   return (
-    <Svg style={{ fill }}  />
-  );
+    <Svg style={{ fill }} />
+  )
 }
