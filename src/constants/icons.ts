@@ -1,4 +1,4 @@
-import { ReactComponent as Logo } from '@/src/assets/Logo.svg'
+import { ReactComponent as Logo } from '@/src/assets/logo.svg'
 import { ReactComponent as Scroll } from '@/src/assets/Scroll.svg'
 import { ReactComponent as Timer } from '@/src/assets/Timer.svg'
 import { ReactComponent as Pause } from '@/src/assets/Pause.svg'
