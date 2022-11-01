@@ -1,12 +1,11 @@
-import { styled } from "@/stitches.config";
+import { styled } from '@/stitches.config'
 
-export const Container = styled("div", {
-  display: "flex",
-  flexDirection: "column",
-  gap: "1rem",
-  width: '100%',
-});
-
+export const Container = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '1rem',
+  width: '100%'
+})
 
 export const Input = styled('input', {
   width: '100%',
@@ -21,7 +20,7 @@ export const Input = styled('input', {
 
   '&::placeholder': {
     color: '$gray300',
-    fontSize: '$md',
+    fontSize: '$md'
   },
 
   '&:focus': {
@@ -31,8 +30,8 @@ export const Input = styled('input', {
   variants: {
     hasError: {
       true: {
-        borderColor: '$tomato',
-        color: '$tomato'
+        borderColor: '$red',
+        color: '$red'
       }
     }
   }
