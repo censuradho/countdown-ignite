@@ -23,6 +23,7 @@ export const Input = styled('input', {
   fontSize: 'inherit',
   color: '$gray200',
   padding: '0 0.5rem',
+  maxWidth: '18.75rem',
 
   '&:focus': {
     borderColor: '$primary'

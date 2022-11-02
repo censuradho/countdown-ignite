@@ -8,6 +8,8 @@ export const Container = styled('div', {
   display: 'flex',
   gap: '1rem',
   alignItems: 'center',
+  width: '100%',
+  justifyContent: 'center',
 
   '@table-min': {
     fontSize: '10rem'
